@@ -1,0 +1,22 @@
+Router>en
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.	
+Router(config)#int fa0/0
+Router(config-if)#ip add 172.16.174.1 255.255.255.128
+Router(config-if)#no shut
+Router(config-if)#int fa0/1
+Router(config-if)#ip add 172.16.174.129 255.255.255.128
+Router(config-if)#no shut
+Router(config-if)#int s0/0/0
+Router(config-if)#ip add 172.16.191.22 255.255.255.252
+Router(config-if)#no shut
+Router(config-if)#copy running-config startup-config
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#

@@ -1,0 +1,21 @@
+Southeast>en
+Southeast#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Southeast(config)#hostname SE
+SE(config)#int s0/0/1
+SE(config-if)#ip add 172.16.191.13 255.255.255.252
+SE(config-if)#no shut
+SE(config-if)#int s0/1/0
+SE(config-if)#ip add 172.16.191.9 255.255.255.252
+SE(config-if)#no shut
+SE(config-if)#int s0/0/0
+SE(config-if)#ip add 172.16.191.6 255.255.255.252
+SE(config-if)#no shut
+SE(config-if)#end
+SE#
+%SYS-5-CONFIG_I: Configured from console by console
+	
+SE#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

@@ -1,0 +1,21 @@
+HQ>en
+HQ#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ(config)#int s0/0/1
+HQ(config-if)#ip add 172.16.63.1 255.255.255.252
+HQ(config-if)#no shut
+HQ(config-if)#int s0/1/0
+HQ(config-if)#ip add 172.16.63.5 255.255.255.252
+HQ(config-if)#no shut
+HQ(config-if)#int s0/0/0
+HQ(config-if)#ip add 172.16.63.9 255.255.255.252
+HQ(config-if)#no shut
+HQ(config-if)#end
+HQ#
+%SYS-5-CONFIG_I: Configured from console by console
+
+HQ#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+HQ#

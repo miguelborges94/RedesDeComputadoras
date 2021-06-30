@@ -1,0 +1,21 @@
+Router>en
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname NW-BR1
+NW-BR1(config)#int fa0/0
+NW-BR1(config-if)#ip add 172.16.224.1 255.255.248.0
+NW-BR1(config-if)#no shut
+NW-BR1(config-if)#int fa0/1
+NW-BR1(config-if)#ip add 172.16.32.1 255.255.248.0
+NW-BR1(config-if)#int s0/0/0
+NW-BR1(config-if)#ip add 172.16.255.10 255.255.255.252
+NW-BR1(config-if)#no shut
+NW-BR1(config-if)#end
+NW-BR1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+NW-BR1#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+NW-BR1#

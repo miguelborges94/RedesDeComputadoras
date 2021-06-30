@@ -1,0 +1,21 @@
+WEST>en
+WEST#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WEST(config)#int s0/0/1
+WEST(config-if)#ip add 172.16.255.5 255.255.255.252
+WEST(config-if)#no shut
+WEST(config-if)#int s0/1/0
+WEST(config-if)#ip add 172.16.255.1 255.255.255.252
+WEST(config-if)#no shut
+WEST(config-if)#int s0/0/0
+WEST(config-if)#ip add 172.16.63.10 255.255.255.252
+WEST(config-if)#no shut
+WEST(config-if)#end
+WEST#
+%SYS-5-CONFIG_I: Configured from console by console
+
+WEST#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+WEST#

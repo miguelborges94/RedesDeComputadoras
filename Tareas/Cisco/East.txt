@@ -1,0 +1,21 @@
+EAST>en
+EAST#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EAST(config)#int s0/0/1
+EAST(config-if)#ip add 172.16.191.1 255.255.255.252
+EAST(config-if)#no shut
+EAST(config-if)#int s0/1/0
+EAST(config-if)#ip add 172.16.191.5 255.255.255.252
+EAST(config-if)#no shut
+EAST(config-if)#int s0/0/0
+EAST(config-if)#ip add 172.16.63.6 255.255.255.252
+EAST(config-if)#no shut
+EAST(config-if)#end
+EAST#
+%SYS-5-CONFIG_I: Configured from console by console
+
+EAST#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+EAST#

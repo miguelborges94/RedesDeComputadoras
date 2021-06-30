@@ -1,0 +1,16 @@
+Central>en
+Central#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Central(config)#int fa0/0
+Central(config-if)#ip add 172.16.64.1 255.255.224.0
+Central(config-if)#no shut
+Central(config-if)#int fa0/1
+Central(config-if)#ip add 172.16.96.1 255.255.2440.0
+	
+Central(config-if)#ip add 172.16.96.1 255.255.240.0
+Central(config-if)#no shut
+Central(config-if)#int s0/0/0
+Central(config-if)#ip add 172.16.63.2 255.255.255.252
+Central(config-if)#no shut
+Central(config-if)#end
+Central#copy running-config startup-config
